@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+                name="viewHandler"
+                type="com.android.example.presentation.baseFragment.OnBackPressCallback" />
+
+        <import type="android.view.View"/>
+
+        <variable name="sellsViewModel" type="com.android.example.presentation.sellFeature.SellViewModel"/>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:background="@drawable/background_main"
+            android:layout_height="match_parent">
+        <include
+                android:id="@+id/lnBack"
+                layout="@layout/layout_title_bar"
+                app:viewHandler="@{viewHandler}"
+                app:title="@{@string/main_sell_list}"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@+id/lnBack"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="match_parent"
+                android:indeterminateTint="@color/colorMain"
+                android:layout_height="wrap_content"
+                android:id="@+id/recycler_view"/>
+
+
+        <include
+                android:id="@+id/sell_progress_bar"
+                layout="@layout/layout_progress_bar"
+                app:isLoading="@{sellsViewModel.isLoading()}"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

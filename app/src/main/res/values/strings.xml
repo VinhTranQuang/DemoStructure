@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">DemoApp</string>
+    <string name="main_call_list">Call List</string>
+    <string name="main_buy_list">Buy List</string>
+    <string name="main_sell_list">Sell List</string>
+    <string name="item_name">Name:</string>
+    <string name="item_price">Price:</string>
+    <string name="item_quantity">Quantity:</string>
+    <string name="item_number">Number:</string>
+</resources>

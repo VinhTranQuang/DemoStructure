@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+                name="callObjViewModel"
+                type="com.android.example.presentation.callFeature.CallObjectViewModel" />
+    </data>
+
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/album_card_width_size"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp"
+            app:strokeColor="@color/colorMain"
+            app:strokeWidth="1dp"
+            app:cardUseCompatPadding="true">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                <TextView
+                        android:id="@+id/txtName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:text="@string/item_name"
+                        android:textColor="@color/colorTextSecondary"
+                        android:textSize="@dimen/title"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:text="@{callObjViewModel.callData.name}"
+                        android:textColor="@color/colorTextSecondary"
+                        android:textSize="@dimen/title" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                <TextView
+                        android:id="@+id/txtNumber"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:text="@string/item_number"
+                        android:textColor="@color/colorTextSecondary"
+                        android:textSize="@dimen/title" />
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:text="@{callObjViewModel.callData.number}"
+                        android:textColor="@color/colorTextSecondary"
+                        android:textSize="@dimen/title" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.cardview.widget.CardView>
+
+</layout>

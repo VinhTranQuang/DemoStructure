@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+
+        <import type="android.view.View"/>
+        <variable name="sellObjViewModel" type="com.android.example.presentation.sellFeature.SellObjectViewModel"/>
+    </data>
+
+
+    <androidx.cardview.widget.CardView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/album_card_width_size"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp"
+            app:strokeColor="@color/colorMain"
+            app:strokeWidth="1dp"
+            app:cardUseCompatPadding="true">
+
+        <TextView
+                android:text="@{sellObjViewModel.callData.name}"
+                android:gravity="center"
+                android:layout_margin="8dp"
+                android:textSize="@dimen/title"
+                android:textColor="@color/colorTextSecondary"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+
+    </androidx.cardview.widget.CardView>
+
+</layout>
